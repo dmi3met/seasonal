@@ -3,3 +3,7 @@ layout: default
 ---
 
 {% assign month = 'now' | date: "%b" %}
+
+{% assign current_seasonal = site.data.month | where:'month', 1 %}
+
+{{current_seasonal}}
