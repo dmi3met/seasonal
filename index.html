@@ -1,18 +1,20 @@
 ---
 layout: default
 ---
-{% assign month = 'now' | date: "%b" %}
+<div id="fruits"></div>
 
-Текущее время по site{{site.time}}
+<script>
+  var d = new Date();
+  var months = ['January', 'February', 'March']; // список месяцев
+  var fruits = {{ site.data.fruits | jsonify }}; // получаем список фруктов из YAML
 
-Текущее время по now{{ 'now' | date: "%R"}}
-<h1>Список созревших фруктов в {{ site.month }}</h1>
+  var monthIndex = d.getMonth(); // получаем индекс текущего месяца
+  var monthFruits = fruits[monthIndex]; // получаем массив фруктов для текущего месяца
 
-<ul>
-{% for fruit in site.data.fruits %}
-  1
-  {% if fruit.months contains site.month %}
-    <li>{{ fruit.name }}</li>
-  {% endif %}
-{% endfor %}
-</ul>
+  // выводим список фруктов на страницу
+  var fruitsList = '';
+  for (var i = 0; i < monthFruits.length; i++) {
+    fruitsList += '<li>' + monthFruits[i] + '</li>';
+  }
+  document.getElementById("fruits").innerHTML = '<ul>' + fruitsList + '</ul>';
+</script>
