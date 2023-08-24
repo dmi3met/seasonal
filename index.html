@@ -10,6 +10,7 @@ layout: default
 
 <ul>
 {% for fruit in site.data.fruits %}
+  1
   {% if fruit.months contains site.month %}
     <li>{{ fruit.name }}</li>
   {% endif %}
