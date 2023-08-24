@@ -1,9 +1,14 @@
 ---
 layout: default
 ---
-
 {% assign month = 'now' | date: "%b" %}
+{{site.time}}
+<h1>Список созревших фруктов в {{ site.month }}</h1>
 
-{% assign current_seasonal = site.data.month | where:'month', 1 %}
-
-{{current_seasonal}}
+<ul>
+{% for fruit in site.data.fruits %}
+  {% if fruit.months contains site.month %}
+    <li>{{ fruit.name }}</li>
+  {% endif %}
+{% endfor %}
+</ul>
