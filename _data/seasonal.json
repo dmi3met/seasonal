@@ -1,0 +1,14 @@
+- name: Абрикос
+  months: [6, 7]
+
+- name: Арбуз
+  months: [7, 8, 9]
+
+- name: Виноград
+  months: [8, 9, 10]
+
+- name: Груша
+  months: [8, 9, 10]
+
+- name: Яблоко
+  months: [9, 10, 11]
