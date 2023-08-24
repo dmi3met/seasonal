@@ -1,10 +1,10 @@
 fruits:
-  - January:
+  - 8:
       - apple
       - pear
-  - February:
+  - 9:
       - orange
       - banana
-  - March:
+  - 10:
       - kiwi
       - pineapple
