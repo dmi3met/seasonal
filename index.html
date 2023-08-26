@@ -18,7 +18,7 @@ title: "Сезонные овощи и фрукты"
   for (var i = 0; i < monthVegs.length; i++) {
     vegsList += '<li>' + monthVegs[i] + '</li>';
   }
-  document.getElementById("vegs").innerHTML += '<ul type="square">' + vegsList + '</ul>';
+  document.getElementById("vegs").innerHTML += '<ul>' + vegsList + '</ul>';
 
   
   var fruits = {{ site.data.fruits | jsonify }};
@@ -27,6 +27,6 @@ title: "Сезонные овощи и фрукты"
   for (var i = 0; i < monthFruits.length; i++) {
     fruitsList += '<li>' + monthFruits[i] + '</li>';
   }
-  document.getElementById("fruits").innerHTML += '<ul type="square">' + fruitsList + '</ul>';
+  document.getElementById("fruits").innerHTML += '<ul>' + fruitsList + '</ul>';
 
 </script>
