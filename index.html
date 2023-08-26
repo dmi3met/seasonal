@@ -3,31 +3,29 @@ layout: default
 title: "Сезонные овощи и фрукты"
 ---
 
-<div id="fruits">Сезонные фрукты</div>
-<div id="vegs">Сезонные овощи</div>
+<div id="vegs">Овощи:</div>
+<div id="fruits">Фрукты:</div>
+
 
 <script>
   var d = new Date();
   var monthIndex = d.getMonth();
   
-  var fruits = {{ site.data.fruits | jsonify }};
   var vegs = {{ site.data.vegs | jsonify }};
-  //var fruits = [["apple","pear"],["orange","banana"],["kiwi","pineapple"],["apple","pear"],["orange","banana"],["kiwi","pineapple"],["apple","pear"],["orange","banana"],["kiwi","pineapple"]]; // получаем список фруктов из YAML
-  
-  
-  var monthFruits = fruits[monthIndex];
-  var fruitsList = '';
-  for (var i = 0; i < monthFruits.length; i++) {
-    fruitsList += '<li>' + monthFruits[i] + '</li>';
-  }
-  
   var monthVegs = vegs[monthIndex];
   var vegsList = '';
   for (var i = 0; i < monthVegs.length; i++) {
     vegsList += '<li>' + monthVegs[i] + '</li>';
   }
-  
-  
-  document.getElementById("fruits").innerHTML += '<ul type="square">' + fruitsList + '</ul>';
   document.getElementById("vegs").innerHTML += '<ul type="square">' + vegsList + '</ul>';
+
+  
+  var fruits = {{ site.data.fruits | jsonify }};
+  var monthFruits = fruits[monthIndex];
+  var fruitsList = '';
+  for (var i = 0; i < monthFruits.length; i++) {
+    fruitsList += '<li>' + monthFruits[i] + '</li>';
+  }
+  document.getElementById("fruits").innerHTML += '<ul type="square">' + fruitsList + '</ul>';
+
 </script>
