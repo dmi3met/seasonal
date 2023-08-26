@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Сезонные овощи и фрукты: "
+title: "Сезонные овощи и фрукты"
 ---
-
+<div id="title">Сезонные овощи и фрукты: </div>
 <div id="vegs">Овощи:</div>
 <div id="fruits">Фрукты:</div>
 
@@ -10,7 +10,7 @@ title: "Сезонные овощи и фрукты: "
 <script>
   var d = new Date();
   var monthIndex = d.getMonth();
-  document.title += d.toLocaleDateString("ru-RU", { month: 'long' })
+  document.getElementById("title").innerHTML += d.toLocaleDateString("ru-RU", { month: 'long' })
   
   var vegs = {{ site.data.vegs | jsonify }};
   var monthVegs = vegs[monthIndex];
